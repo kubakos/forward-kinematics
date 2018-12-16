@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 from math import radians, sin, cos
 from numpy import array, dot
 
 
-class Cframe(object):
+class cframe(object):
     """ Creates a coordinate frame as a homogeneous matrix. """
     
     
@@ -64,7 +65,9 @@ class Cframe(object):
         for i in range(3):
             for j in range(3):
                 self.h_matrix[i, j] = h_rot[i, j]
-                
+    
+
+
 
     def setYaw(self, angle_Z):
         """ Rotates the homogeneous matrix by angle_Z by the Z axis. """
@@ -82,7 +85,9 @@ class Cframe(object):
         for i in range(3):
             for j in range(3):
                 self.h_matrix[i, j] = h_rot[i, j]
-                
+    
+
+
 
     def setDH(self, a, alpha, d, theta):
         """
@@ -113,11 +118,22 @@ class Cframe(object):
         # Setting theta:
         self.setYaw(theta)
 
-    def getMatrix(self):
+
+
+    def get(self):
         """ Returns the homogeneous matrix itself. """
         return self.h_matrix
-"""
+
+
+
+
+'''
 class Link(Cframe):
     def __init__(self):
-        
-        """
+        pass
+'''
+
+
+
+
+
