@@ -3,6 +3,7 @@ from math import radians, sin, cos
 import numpy as np
 
 
+
 class cframe(object):
     """ Creates a coordinate frame as a homogeneous matrix. """
     
