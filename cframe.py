@@ -4,7 +4,7 @@ import numpy as np
 
 
 class CoordinateFrame(object):
-    """ Creates a coordinate frame as a homogeneous matrix. """
+    # Creates a coordinate frame as a homogeneous matrix
 
     def __init__(self, base=None):
         # [0,0] - [2,2] rotation
@@ -23,7 +23,7 @@ class CoordinateFrame(object):
         return self.matrix
 
     def roll(self, angle_X):
-        """ Rotates the homogeneous matrix by angle_X by the X axis. """
+        # Rotates the homogeneous matrix by angle_X by the X axis
 
         rolled_by = np.identity(4)
         rolled_by[1, 1] = cos(radians(angle_X))
@@ -34,7 +34,7 @@ class CoordinateFrame(object):
         self.matrix = np.dot(self.matrix, rolled_by)
 
     def pitch(self, angle_Y):
-        """ Rotates the homogeneous matrix by angle_Y by the Y axis. """
+        # Rotates the homogeneous matrix by angle_Y by the Y axis
 
         pitched_by = np.identity(4)
         pitched_by[0, 0] = cos(radians(angle_Y))
@@ -45,7 +45,7 @@ class CoordinateFrame(object):
         self.matrix = np.dot(self.matrix, pitched_by)
 
     def yaw(self, angle_Z):
-        """ Rotates the homogeneous matrix by angle_Z by the Z axis. """
+        # Rotates the homogeneous matrix by angle_Z by the Z axis
 
         yawed_by = np.identity(4)
         yawed_by[0, 0] = cos(radians(angle_Z))
@@ -55,27 +55,43 @@ class CoordinateFrame(object):
 
         self.matrix = np.dot(self.matrix, yawed_by)
 
-    def set_param_a(self, a):
-        """ Sets the 'a' parameter of the convention as [ax, ay]. """
+    def set_pos(self, posX, posY, posZ):
+        # Sets the position of the homogeneous matrix
 
-        self.matrix[0, 3] += a[0]
-        self.matrix[1, 3] += a[1]
+        self.matrix[0, 3] = posX
+        self.matrix[1, 3] = posY
+        self.matrix[1, 3] = posZ
 
-    def set_param_alpha(self, alpha):
-        """ Sets the 'alpha' parameter of the convention
-            as ["X" / "Y", alpha]. """
+    def set_perspective(self, X, Y, Z):
+        # Sets the perspective parameter of the homogeneous matrix
 
-        if alpha[0] in ['x', 'X']:
-            self.roll(alpha[1])
-        elif alpha[0] in ['y', 'Y']:
-            self.pitch(alpha[1])
+        self.matrix[3, 0] = X
+        self.matrix[3, 1] = Y
+        self.matrix[3, 2] = Z
+
+    def set_scale(self, scale):
+        # Sets the scale parameter of the homogeneous matrix
+
+        self.matrix[3, 3] = scale
+
+    def set_param_a(self, aX, aY):
+        # Sets the 'a' parameter of the convention
+
+        self.matrix[0, 3] += aX
+        self.matrix[1, 3] += aY
+
+    def set_param_alpha(self, alphaX, alphaY):
+        # Sets the 'alpha' parameter of the convention
+
+        self.roll(alphaX)
+        self.pitch(alphaY)
 
     def set_param_d(self, d):
-        """ Sets the 'd' parameter of the convention. """
+        # Sets the 'd' parameter of the convention
 
         self.matrix[2, 3] += d
 
     def set_param_theta(self, theta):
-        """ Sets the 'theta' parameter of the convention. """
+        # Sets the 'theta' parameter of the convention
 
         self.yaw(theta)
