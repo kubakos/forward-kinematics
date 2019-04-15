@@ -4,7 +4,7 @@ import numpy as np
 
 
 class CoordinateFrame(object):
-    # Creates a coordinate frame as a homogeneous matrix
+    # Creates a coordinate frame as a homogeneous matrix.
 
     def __init__(self):
         # [0,0] - [2,2] rotation
