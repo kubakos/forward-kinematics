@@ -1,7 +1,7 @@
 # dh-vis
 
-3D visualization of coordinate frame linkages
-with Denavit-Hartenberg parameters.
+3D visualization of coordinate-frame linkages
+connected by the Denavit-Hartenberg Convention.
 
 To start, type 'python3 plotter.py' in bash.
 
