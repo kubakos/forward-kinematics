@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
 # https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to
 
-#
-# Jointangles of the wireframe robot can be changed
-# via the set_param_theta() method of the
-# CoordinateFrame object in the 'Robotic Arm construction'
-# section
-#
-
 from cframe import CoordinateFrame
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
