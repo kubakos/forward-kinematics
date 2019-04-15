@@ -6,15 +6,13 @@ import numpy as np
 class CoordinateFrame(object):
     # Creates a coordinate frame as a homogeneous matrix
 
-    def __init__(self, base=None):
+    def __init__(self):
         # [0,0] - [2,2] rotation
         # [0,3] - [2,3] position
         # [3,0] - [3,2] perspective parameters
         # [3,3] scale factor
 
         self.matrix = np.identity(4)
-        if base != None:
-            self.matrix = np.copy(base.get())
 
     def __getitem__(self, key):
         return self.matrix[key]
@@ -60,7 +58,7 @@ class CoordinateFrame(object):
 
         self.matrix[0, 3] = posX
         self.matrix[1, 3] = posY
-        self.matrix[1, 3] = posZ
+        self.matrix[2, 3] = posZ
 
     def set_perspective(self, X, Y, Z):
         # Sets the perspective parameter of the homogeneous matrix
@@ -95,3 +93,6 @@ class CoordinateFrame(object):
         # Sets the 'theta' parameter of the convention
 
         self.yaw(theta)
+
+    def set_parent(self, parent):
+        self.matrix = np.dot(parent, self.matrix)
