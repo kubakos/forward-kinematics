@@ -1,4 +1,4 @@
-# dh-vis
+# Forward - Kinematics
 
 3D visualization of coordinate-frame linkages
 connected by the Denavit-Hartenberg Convention.
