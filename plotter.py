@@ -49,8 +49,8 @@ joint6 = CoordinateFrame()
 
 #    Joint Angle variables
 
-q1, q2, q3 = 0, 110, -150
-q4, q5, q6 = 0, 40, 0
+q1, q2, q3 = 0, 90, 0
+q4, q5, q6 = 0, 0, 0
 
 #    ---------------------
 
@@ -63,14 +63,13 @@ joint2.set_theta(q2)
 joint3.set_a(300)
 joint3.set_theta(q3)
 
-joint4.set_a(150)
+joint4.set_a(250)
 joint4.set_theta(-90)
 joint4.set_alpha(-90)
 joint4.set_theta(q4)
 
-joint4.set_alpha(90)
-joint4.set_theta(90)
-joint5.set_a(100)
+joint5.set_alpha(90)
+joint5.set_theta(90)
 joint5.set_theta(q5)
 
 joint6.set_theta(-90)
