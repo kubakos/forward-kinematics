@@ -72,25 +72,23 @@ class CoordinateFrame(object):
 
         self.matrix[3, 3] = scale
 
-    def set_param_a(self, aX, aY):
-        # Sets the 'a' parameter of the convention
+    def set_a(self, a):
+        # Sets the 'a' parameter of the DH convention
 
-        self.matrix[0, 3] += aX
-        self.matrix[1, 3] += aY
+        self.matrix[0, 3] = a
 
-    def set_param_alpha(self, alphaX, alphaY):
-        # Sets the 'alpha' parameter of the convention
+    def set_alpha(self, alpha):
+        # Sets the 'alpha' parameter of the DH convention
 
-        self.roll(alphaX)
-        self.pitch(alphaY)
+        self.roll(alpha)
 
-    def set_param_d(self, d):
-        # Sets the 'd' parameter of the convention
+    def set_d(self, d):
+        # Sets the 'd' parameter of the DH convention
 
         self.matrix[2, 3] += d
 
-    def set_param_theta(self, theta):
-        # Sets the 'theta' parameter of the convention
+    def set_theta(self, theta):
+        # Sets the 'theta' parameter of the DH convention
 
         self.yaw(theta)
 

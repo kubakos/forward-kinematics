@@ -37,8 +37,6 @@ def set_axes_equal(ax):
     ax.set_zlim3d([z_middle - plot_radius, z_middle + plot_radius])
 
 
-# Robotic Arm construction
-
 base = CoordinateFrame()
 joint1 = CoordinateFrame()
 joint2 = CoordinateFrame()
@@ -47,25 +45,40 @@ joint4 = CoordinateFrame()
 joint5 = CoordinateFrame()
 joint6 = CoordinateFrame()
 
-joint1.set_param_d(100)
-joint1.set_param_theta(0)
+# --- Robotic Arm construction ---
 
-joint2.set_param_alpha(90, 0)
-joint2.set_param_theta(110)
+#    Joint Angle variables
 
-joint3.set_param_a(300, 0)
-joint3.set_param_theta(-150)
+q1, q2, q3 = 0, 110, -150
+q4, q5, q6 = 0, 40, 0
 
-joint4.set_param_a(150, 0)
-joint4.set_param_alpha(0, 90)
-joint4.set_param_theta(0)
+#    ---------------------
 
-joint4.set_param_alpha(0, -90)
-joint5.set_param_a(100, 0)
-joint5.set_param_theta(40)
+joint1.set_d(100)
+joint1.set_theta(q1)
 
-joint6.set_param_a(30, 0)
-joint6.set_param_theta(0)
+joint2.set_alpha(90)
+joint2.set_theta(q2)
+
+joint3.set_a(300)
+joint3.set_theta(q3)
+
+joint4.set_a(150)
+joint4.set_theta(-90)
+joint4.set_alpha(-90)
+joint4.set_theta(q4)
+
+joint4.set_alpha(90)
+joint4.set_theta(90)
+joint5.set_a(100)
+joint5.set_theta(q5)
+
+joint6.set_theta(-90)
+joint6.set_alpha(-90)
+joint6.set_a(30)
+joint6.set_theta(q6)
+
+# ---------------------------------
 
 joint1.set_parent(base.get())
 joint2.set_parent(joint1.get())
