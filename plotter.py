@@ -79,6 +79,7 @@ joint6.set_theta(q6)
 
 # ---------------------------------
 
+joint1.set_parent(base.get())
 joint2.set_parent(joint1.get())
 joint3.set_parent(joint2.get())
 joint4.set_parent(joint3.get())
