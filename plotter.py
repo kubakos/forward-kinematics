@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to
 
-from cframe import CoordinateFrame
+from tf import HomogeneousMatrix
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 from matplotlib import cm
@@ -37,13 +37,13 @@ def set_axes_equal(ax):
     ax.set_zlim3d([z_middle - plot_radius, z_middle + plot_radius])
 
 
-base = CoordinateFrame()
-joint1 = CoordinateFrame()
-joint2 = CoordinateFrame()
-joint3 = CoordinateFrame()
-joint4 = CoordinateFrame()
-joint5 = CoordinateFrame()
-joint6 = CoordinateFrame()
+base = HomogeneousMatrix()
+joint1 = HomogeneousMatrix()
+joint2 = HomogeneousMatrix()
+joint3 = HomogeneousMatrix()
+joint4 = HomogeneousMatrix()
+joint5 = HomogeneousMatrix()
+joint6 = HomogeneousMatrix()
 
 # --- Robotic Arm construction ---
 
