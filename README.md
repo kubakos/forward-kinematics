@@ -17,3 +17,5 @@ Dependencies:
 
 Joint angles of the wireframe robot can be changed
 in plotter.py > 'Joint Angle variables' section.
+
+https://github.com/kubakos/forward-kinematics/blob/master/figure-2.png
