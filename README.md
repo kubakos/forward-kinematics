@@ -5,11 +5,11 @@ connected by Denavit-Hartenberg parameters.
 
 Usage:
 
-`
+```
 git clone https://github.com/kubakos/forward-kinematics.git
 cd forward-kinematics
 python3 plotter.py
-`
+```
 
 Dependencies: 
   - python3
