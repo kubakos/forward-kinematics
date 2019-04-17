@@ -49,7 +49,7 @@ joint6 = HomogeneousMatrix()
 
 #    Joint Angle variables
 
-q1, q2, q3 = 0, 110, -130
+q1, q2, q3 = 0, 110, -150
 q4, q5, q6 = 0, 40, 0
 
 #    ---------------------
