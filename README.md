@@ -1,6 +1,6 @@
 # Forward Kinematics
 
-3D plotting of coordinate frames
+3D plotting coordinate frames
 connected by Denavit-Hartenberg parameters.
 
 Dependencies: 
