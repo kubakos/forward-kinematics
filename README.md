@@ -1,6 +1,6 @@
 # Forward Kinematics
 
-3D visualization of coordinate frame linkages
+3D plotting of coordinate frame linkages
 connected by Denavit-Hartenberg parameters.
 
 Usage:
