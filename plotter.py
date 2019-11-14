@@ -104,7 +104,7 @@ Z = [base[2, 3], joint1[2, 3],
 # Plot
 
 ax = plt.axes(projection='3d')
-ax.set_aspect('equal')
+# ax.set_aspect('equal')
 ax.plot3D(X, Y, Z)
 
 ax.set_xlabel('x')
