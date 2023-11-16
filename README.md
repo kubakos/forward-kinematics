@@ -12,6 +12,6 @@ Usage:
 ```
 git clone https://github.com/kubakos/forward-kinematics.git
 cd forward-kinematics
-python3 main.py
+./main.py
 ```
-![](figure-2.png)
+![](figure.png)
